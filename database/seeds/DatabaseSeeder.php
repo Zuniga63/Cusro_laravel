@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +12,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        $this->truncate_tables([
+            'rol',
+            'permission',
+        ]);
+        $this->call(RolTableSeeder::class);
+        $this->call(PermissionTableSeeder::class);
+    }
+
+    /**
+     * Este metodo se encarga de eliminar los datos contenidos 
+     * en el listado para que al volver  sembrar los datos
+     * del seeder estos se dupliquen
+     */
+    protected function truncate_tables($tables){
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
+        foreach ($tables as $table) {
+            DB::table($table)->truncate();
+        }
+
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
     }
 }
