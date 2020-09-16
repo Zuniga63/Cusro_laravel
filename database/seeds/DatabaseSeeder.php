@@ -15,9 +15,11 @@ class DatabaseSeeder extends Seeder
         $this->truncate_tables([
             'rol',
             'permission',
+            'user',
         ]);
         $this->call(RolTableSeeder::class);
         $this->call(PermissionTableSeeder::class);
+        $this->call(UserTableSeeder::class);
     }
 
     /**
