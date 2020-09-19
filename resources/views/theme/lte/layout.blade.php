@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Boxed Layout</title>
+  <title>@yield('title', 'Biblioteca') | tutorialesvirtuales</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,6 +16,10 @@
   <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/adminlte.min.css")}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <!-- El siguiente yield es para poder agregar eslitos
+    personalizados en el caso de requerirlos -->
+  @yield('styles')
 </head>
 
 <body class="hold-transition sidebar-mini layout-boxed">
@@ -30,7 +34,7 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <section class="content">
-        
+        @yield('content')
       </section>
     </div>
 
@@ -45,6 +49,9 @@
   <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset("assets/$theme/dist/js/demo.js")}}"></script>
+
+  <!-- Lo siguiente para poder agregar scripts personalizados segun sean requeridos -->
+  @yield('scripts')
 </body>
 
 </html>
