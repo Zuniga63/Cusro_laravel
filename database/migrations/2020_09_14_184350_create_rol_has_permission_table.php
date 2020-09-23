@@ -18,6 +18,8 @@ class CreateRolHasPermissionTable extends Migration
             $table->foreignId('rol_id')->constrained('rol');
             $table->foreignId('permission_id')->constrained('permission');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 
