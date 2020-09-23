@@ -16,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'InicioController@index');
 Route::get('admin/permiso', 'admin\PermissionController@index')->name('permission');
 Route::get('admin/permiso/crear', 'admin\PermissionController@create')->name('create_permission');
+Route::get('admin/menu', 'admin\MenuController@index')->name('permission');
+Route::get('admin/menu/crear', 'admin\MenuController@create')->name('permission');
+
 
 // Route::view('/', 'welcome');
