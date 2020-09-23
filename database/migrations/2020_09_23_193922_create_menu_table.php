@@ -15,9 +15,10 @@ class CreateMenuTable extends Migration
     {
         Schema::create('menu', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('main_menu')->nullable()->constrained('menu')->onDelete("SET NULL");
             $table->string('name', 50);
             $table->string('url', 100);
-            $table->tinyInteger('order')->unsigned();
+            $table->unsignedTinyInteger('order')->default(0);
             $table->string('icon');
             $table->timestamps();
             $table->charset = 'utf8mb4';
