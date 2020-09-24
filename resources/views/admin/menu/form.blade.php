@@ -1,3 +1,4 @@
+@include('includes.form_error')
 <!-- Horizontal Form -->
 <div class="card card-success">
   <div class="card-header">
@@ -11,19 +12,19 @@
       <div class="form-group row">
         <label for="name" class="col-lg-2 col-form-label required">Nombre</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" id="name" name="name" placeholder="Escribe el nombre aquí" required>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Escribe el nombre aquí" value="{{old('name')}}">
         </div>
       </div>
       <div class="form-group row">
         <label for="url" class="col-lg-2 col-form-label required">Url</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" id="url" name="url" placeholder="Escribe la ruta aquí" required>
+          <input type="text" class="form-control" id="url" name="url" placeholder="Escribe la ruta aquí" required value="{{old('url')}}">
         </div>
       </div>
       <div class="form-group row">
         <label for="icon" class="col-lg-2 col-form-label">Icono</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" id="icon" name="icon" placeholder="Escribe la clase del icono">
+          <input type="text" class="form-control" id="icon" name="icon" placeholder="Escribe la clase del icono" value="{{old('icon')}}">
         </div>
       </div>
     </div>
