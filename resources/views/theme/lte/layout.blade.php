@@ -7,7 +7,6 @@
   <title>@yield('title', 'Biblioteca') | tutorialesvirtuales</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset("assets/$theme/plugins/fontawesome-free/css/all.min.css")}}">
   <!-- Ionicons -->
@@ -22,23 +21,27 @@
   @yield('styles')
 </head>
 
-<body class="hold-transition sidebar-mini layout-boxed">
+<body class="hold-transition sidebar-mini layout-navbar-fixed">
   <!-- Site wrapper -->
   <div class="wrapper">
-    <!-- Inicio Header -->
-    @include("theme/$theme/header")
-    <!-- Fin del header -->
-    <!-- Inicio Aside -->
-    @include("theme/$theme/aside")
-    <!-- Fin Aside -->
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      <section class="content">
-        @yield('content')
-      </section>
-    </div>
+    <!-- Navbar -->
+    @include("theme/$theme/layout_main_navbar")
+    <!-- /.navbar -->
 
-    @include("theme/$theme/footer")
+    <!-- Main Sidebar Container -->
+    @include("theme/$theme/layout_main_sidebar")
+
+    <!-- Content Wrapper. Contains page content -->
+    @include("theme/$theme/layout_content_wrapper")
+    <!-- /.content-wrapper -->
+
+    <!-- Main footer -->
+    @include("theme/$theme/layout_main_footer");
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
   </div>
 
   <!-- jQuery -->
@@ -46,7 +49,7 @@
   <!-- Bootstrap 4 -->
   <script src="{{asset("assets/$theme/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
   <!-- AdminLTE App -->
-  <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
+  <script src="{{asset("assets/$theme/dist/js/adminlte.js")}}"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset("assets/$theme/dist/js/demo.js")}}"></script>
 
