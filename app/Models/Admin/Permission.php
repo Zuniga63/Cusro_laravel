@@ -12,4 +12,5 @@ class Permission extends Model
      * en plural ya que yo utilizo nombres en singular
      */
     protected $table = "permission";
+    public $timestamps = false;
 }
