@@ -5,33 +5,32 @@
   </div>
   <!-- /.card-header -->
   <!-- form start -->
-  <form class="form-horizontal">
+  <form class="form-horizontal" action="{{route('store_menu')}}" method="POST">
+    @csrf
     <div class="card-body">
       <div class="form-group row">
-        <label for="inputEmail3" class="col-lg-2 col-form-label">Email</label>
+        <label for="name" class="col-lg-2 col-form-label required">Nombre</label>
         <div class="col-lg-10">
-          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+          <input type="text" class="form-control" id="name" name="name" placeholder="Escribe el nombre aquí" required>
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword3" class="col-lg-2 col-form-label">Password</label>
+        <label for="url" class="col-lg-2 col-form-label required">Url</label>
         <div class="col-lg-10">
-          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+          <input type="text" class="form-control" id="url" name="url" placeholder="Escribe la ruta aquí" required>
         </div>
       </div>
       <div class="form-group row">
-        <div class="offset-sm-2 col-lg-10">
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck2">
-            <label class="form-check-label" for="exampleCheck2">Remember me</label>
-          </div>
+        <label for="icon" class="col-lg-2 col-form-label">Icono</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" id="icon" name="icon" placeholder="Escribe la clase del icono">
         </div>
       </div>
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-      <button type="submit" class="btn btn-info">Sign in</button>
-      <button type="submit" class="btn btn-default float-right">Cancel</button>
+      <button type="submit" class="btn btn-success">Crear</button>
+      <button type="reset" class="btn btn-default float-right">Cancelar</button>
     </div>
     <!-- /.card-footer -->
   </form>

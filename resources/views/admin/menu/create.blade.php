@@ -4,23 +4,25 @@
 Sistema Menús
 @endsection
 
-@section('content')
-<!-- Content Header (Page header) -->
+@section('contentHeader')
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Crear Menús</h1>
+        <h1>Sistema de menus - Nuevo menú</h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-          <li class="breadcrumb-item"><a href="/admin/permiso">Permiso</a></li>
-          <li class="breadcrumb-item active">Crear</li>
+          <li class="breadcrumb-item"><a href="/">Admin</a></li>
+          <li class="breadcrumb-item"><a href="#">Layout</a></li>
+          <li class="breadcrumb-item active">Fixed Navbar Layout</li>
         </ol>
       </div>
     </div>
   </div><!-- /.container-fluid -->
 </section>
-@include('admin/menu/form')
+@endsection
+
+@section('content')
+  @include('admin/menu/form')
 @endsection

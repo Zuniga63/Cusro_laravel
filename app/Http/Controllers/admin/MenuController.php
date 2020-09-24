@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Menu;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -35,7 +36,7 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Menu::create($request->all());
     }
 
     /**
