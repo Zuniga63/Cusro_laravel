@@ -53,6 +53,10 @@
   <script src="{{asset("assets/$theme/dist/js/adminlte.js")}}"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset("assets/$theme/dist/js/demo.js")}}"></script>
+  <!-- Plugin of jQuery-validations -->
+  <script src="{{asset("assets/$theme/plugins/jquery-validation/jquery.validate.min.js")}}"></script>
+  <script src="{{asset("assets/$theme/plugins/jquery-validation/localization/messages_es.min.js")}}"></script>
+  <script src="{{asset("assets/js/generalValidations.js")}}"></script>
 
   <!-- Lo siguiente para poder agregar scripts personalizados segun sean requeridos -->
   @yield('scripts')
