@@ -38,6 +38,7 @@ class MenuController extends Controller
     public function store(MenuValidation $request)
     {
       Menu::create($request->all());
+      return redirect(route('create_menu'))->with('message', 'Menu creado con exito');
     }
 
     /**

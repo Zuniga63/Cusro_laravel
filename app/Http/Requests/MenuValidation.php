@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\Menu\ValidateFieldUrl;
 use Illuminate\Foundation\Http\FormRequest;
 
 class MenuValidation extends FormRequest
@@ -24,20 +25,36 @@ class MenuValidation extends FormRequest
   public function rules()
   {
     return [
-      'name' => 'required|max:50',
-      'url' => 'required|max:100',
+      'name' => 'required|max:50|unique:menu,name,' . $this->route('id'),
+      'url' => ['required', 'max:100', new ValidateFieldUrl],
       'icon' => 'nullable|max:50'
     ];
   }
 
-  public function messages()
+  /**
+   * El siguiente codigo es la forma de 
+   * crear los mesajes de forma predeterminada
+   */
+  // public function messages()
+  // {
+  //   return [
+  //     'name.required' => "El campo nombre es requerido",
+  //     'name.max' => 'El campo nombre debe ser menor de 50 caracteres',
+  //     'url.required' => "El campo url es requerido",
+  //     'url.max' => 'El campo url no puede ser mayor que 100 caracteres',
+  //     'icon.max' => 'El campo icono debe ser menor de 50 caracteres'
+  //   ];
+  // }
+
+  /**
+   * El siguiente codigoes para definir alias para mis 
+   * atributos
+   */
+  public function attributes()
   {
-    return [
-      'name.required' => "El campo nombre es requerido",
-      'name.max' => 'El campo nombre debe ser menor de 50 caracteres',
-      'url.required' => "El campo url es requerido",
-      'url.max' => 'El campo url no puede ser mayor que 100 caracteres',
-      'icon.max' => 'El campo icono debe ser menor de 50 caracteres'
+    return[
+      'name' => 'nombre',
+      'icon' => 'icono'
     ];
   }
 }

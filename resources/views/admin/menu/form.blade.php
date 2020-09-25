@@ -1,4 +1,5 @@
 @include('includes.form_error')
+@include('includes.form_message')
 <!-- Horizontal Form -->
 <div class="card card-success">
   <div class="card-header">
