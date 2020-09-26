@@ -18,8 +18,8 @@ class CreateBookTable extends Migration
             $table->string('title', 100);
             $table->string('isbn', 30);
             $table->string('author', 100);
-            $table->tinyInteger('stock')->unsigned();
-            $table->string('editorial', 50)->nullable()->default(0);
+            $table->tinyInteger('stock')->unsigned()->default(0);
+            $table->string('editorial', 50)->nullable();
             $table->string('photo', 100)->nullable();
             $table->timestamps();
             $table->charset = 'utf8mb4';
