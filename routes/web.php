@@ -20,8 +20,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
   Route::get('permiso/crear', 'PermissionController@create')->name('create_permission');
 
   Route::get('menu', 'MenuController@index')->name('menu');
-  Route::post('menu', 'MenuController@store')->name('store_menu');
   Route::get('menu/crear', 'MenuController@create')->name('create_menu');
+  Route::post('menu', 'MenuController@store')->name('store_menu');
+  Route::post('menu/guardar-orden', 'MenuController@saveOrder');
 });
 
 /**

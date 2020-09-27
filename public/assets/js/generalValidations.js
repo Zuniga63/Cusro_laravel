@@ -17,6 +17,9 @@ const biblioteca = function () {
         },
         unhighlight: function (element, errorClass, validClass) {
           $(element).removeClass('is-invalid');
+        },
+        submitHandler: function(form){
+          return true;
         }
       })
     }

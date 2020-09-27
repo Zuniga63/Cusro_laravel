@@ -5,7 +5,7 @@ Sistema Menús
 @endsection
 
 @section('scripts')
-<script src="{{asset("assets/pages/scripts/admin/create.js")}}"></script>
+<script src="{{asset("assets/pages/scripts/admin/menu/create.js")}}"></script>
 @endsection
 
 @section('contentHeader')
